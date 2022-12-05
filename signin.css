@@ -45,3 +45,18 @@ body {
   height: 100%;
   width: auto;
 }
+
+.pdf {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.show {
+  display: block;
+}
+
+.remove {
+  background-color: red;
+}
+

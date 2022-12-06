@@ -88,9 +88,13 @@
       <label for="floatingInput">Номер задания</label>
     </div>
 
-    <button class="w-100 btn btn-lg btn-primary mt-4" id="btn">найти</button>
+
+    <button class="w-100 btn btn-lg btn-primary mt-4" id="btn" >найти</button>
+    <a href="" class="w-100 btn btn-lg btn-primary mt-4 open" id="open-file">Открыть</a>
+   
     
   </form>
+  
 </main>
 
 
@@ -100,11 +104,14 @@
     let a;
     btn.onclick = function(e) {
     e.preventDefault();
-    document.getElementById('form').style.display = 'none'
-    document.getElementById('pdf').style.display = 'block'
-    a = document.getElementById('floatingInput').value + ".pdf"
-    
-    document.getElementById("pdf").src = a
+    a = document.getElementById('floatingInput').value + " вопрос.pdf"
+    if (a==" вопрос.pdf" || document.getElementById('floatingInput').value < 1 || document.getElementById('floatingInput').value >36) {
+      alert("Введите номер от 1 до 36");
+    } else {
+      document.getElementById('btn').style.display = 'none'
+      document.getElementById('open-file').style.display = 'block'
+      document.getElementById('open-file').href=a
+    }
   }
   </script>
 </html>

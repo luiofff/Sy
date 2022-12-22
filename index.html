@@ -99,6 +99,17 @@
       <img class="mb-4 logo" src="logo.png" alt="">
     </div>
 
+    
+      <select id="selector" class="form-control selector">
+        <option value=”main-text”>Выберите предмет</option>
+
+        <option value="history">История</option>
+        
+        <option value="oti">ОТИ</option>
+        
+        </select>
+    
+
     <div class="form-floating">
       <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Номер задания</label>
@@ -119,15 +130,15 @@
   <script>
     let a;
     btn.onclick = function(e) {
-    e.preventDefault();
-    a = document.getElementById('floatingInput').value + " вопрос.pdf"
-    if (a==" вопрос.pdf" || document.getElementById('floatingInput').value < 1 || document.getElementById('floatingInput').value >36) {
-      alert("Введите номер от 1 до 36");
-    } else {
-      document.getElementById('btn').style.display = 'none'
-      document.getElementById('open-file').style.display = 'block'
-      document.getElementById('open-file').href=a
-    }
+      e.preventDefault();
+      a = document.getElementById("selector").value + "/" + document.getElementById('floatingInput').value + ".pdf"
+      if (a==".pdf" || document.getElementById('floatingInput').value < 1 || document.getElementById('floatingInput').value >36) {
+        alert("Введите номер от 1 до 36");
+      } else {
+        document.getElementById('btn').style.display = 'none'
+        document.getElementById('open-file').style.display = 'block'
+        document.getElementById('open-file').href=a
+      }
     }
   </script>
 </html>
